@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzair B2B Services</title>
+    <style>
+        /* General Reset and Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: grey;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .main-content {
+            text-align: center;
+            padding: 2rem;
+        }
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+        .product-images {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .product-images img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+        .footer-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        /* Floating Button */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            font-size: 14px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .floating-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WELCOME TO UZAIR B2B SERVICES</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container main-content">
+            <a href="https://sites.google.com/view/uzairahmedb2b/home" class="button">CLICK HERE TO GO TO THE WEBSITE</a>
+            <p>I provide bulk refurbished laptops, packing tapes, laptop accessories, and many more products at genuine rates with configurations provided by the customer. We offer laptops, computers, accessories, and hardware packing items like industrial tapes, strapping, and staplers at wholesale prices. Our services are currently targeting Varanasi city and will expand in the future. Our target groups include small to mid-cap industries, coaching institutes, schools, skill centers, and toy industries.</p>
+            
+            <div class="product-images">
+                <img src="https://i.pinimg.com/originals/8b/ed/07/8bed07b0525de6c40cec2fd811fa783c.png" alt="Laptop Image 1">
+                <img src="https://www.pngall.com/wp-content/uploads/2016/05/Laptop-Free-Download-PNG.png" alt="Laptop Image 2">
+                <img src="https://www.pngall.com/wp-content/uploads/4/Tape-PNG-Image.png" alt="Packing Tape">
+                <img src="https://i.pinimg.com/736x/81/c7/4c/81c74cf3ebf99fe56953bf20a7a50161.jpg" alt="Laptop Accessory 1">
+                <img src="https://i.pinimg.com/originals/42/c3/2f/42c32f8403f435c707b0bc44d2ebc346.png" alt="Laptop Accessory 2">
+            </div>
+            
+            <p><strong>For contact call on:</strong> <b>+91 9335723334</b></p>
+            <p>Or <a href="https://wa.link/4jrun4" class="button">click here to talk on WhatsApp</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>Follow me on <a href="https://www.instagram.com/uzairvibes?igsh=MXEwczdtd290aXl0Zw==" class="footer-link" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- Floating Button -->
+    <div id="floating-button" class="floating-button" onclick="window.location.href='https://wa.link/4jrun4'">
+        Order Now
+    </div>
+
+    <script>
+        // Make the floating button draggable
+        const button = document.getElementById('floating-button');
+        let offsetX, offsetY, isDragging = false;
+
+        button.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - button.getBoundingClientRect().left;
+            offsetY = e.clientY - button.getBoundingClientRect().top;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                button.style.left = `${e.clientX - offsetX}px`;
+                button.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // For mobile touch support
+        button.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            offsetX = e.touches[0].clientX - button.getBoundingClientRect().left;
+            offsetY = e.touches[0].clientY - button.getBoundingClientRect().top;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                button.style.left = `${e.touches[0].clientX - offsetX}px`;
+                button.style.top = `${e.touches[0].clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+    </script>
+</body>
+</html>
